@@ -1,0 +1,1149 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NEXUS LUXE | Premium Tech & Lifestyle E-Commerce</title>
+  <meta name="description" content="Nexus Luxe is a cutting-edge e-commerce platform for next-gen technology, audiophile sound, ergonomic desk setups, and designer lifestyle essentials.">
+  
+  <!-- Google Fonts: Inter & Outfit -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="/static/css/styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="announcement-bar" id="announcementBar">
+    <div class="container announcement-content">
+      <span class="announcement-tag">PROMO</span>
+      <p class="announcement-text">
+        Exclusive Launch: Use code <strong class="badge-code">LUXE25</strong> for 25% OFF &bull; Free Global Express Shipping on orders $99+
+      </p>
+      <button class="announcement-close" id="closeAnnouncementBtn" aria-label="Close notification">&times;</button>
+    </div>
+  </div>
+
+  <!-- Main Navigation Bar -->
+  <header class="navbar" id="mainNavbar">
+    <div class="container navbar-inner">
+      <!-- Brand Logo -->
+      <a href="/" class="brand-logo" id="brandLogo">
+        <div class="logo-mark">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+          </svg>
+        </div>
+        <span class="logo-text">NEXUS<span class="text-gradient">LUXE</span></span>
+      </a>
+
+      <!-- Quick Nav Links -->
+      <nav class="nav-links">
+        <button class="nav-link active" data-view="catalog" id="navCatalogBtn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+          Catalog
+        </button>
+        <button class="nav-link" data-view="orders" id="navOrdersBtn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+          Orders
+        </button>
+        <button class="nav-link admin-nav-btn" data-view="admin" id="navAdminBtn">
+          <span class="admin-badge">Admin</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path></svg>
+          Management
+        </button>
+      </nav>
+
+      <!-- Center Search Bar -->
+      <div class="search-container">
+        <div class="search-input-wrapper">
+          <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <input type="text" id="globalSearchInput" class="search-input" placeholder="Search electronics, audio, gear..." autocomplete="off">
+          <button class="search-clear-btn" id="searchClearBtn" style="display:none;">&times;</button>
+        </div>
+        <!-- Live Quick Search Dropdown -->
+        <div class="search-dropdown" id="searchDropdown" style="display:none;"></div>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="nav-actions">
+        <!-- Theme Toggle -->
+        <button class="icon-btn theme-toggle-btn" id="themeToggleBtn" aria-label="Toggle Theme" title="Toggle Light/Dark Theme">
+          <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none;">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+
+        <!-- User Profile / Auth Button -->
+        <div class="user-menu-wrapper" id="userMenuWrapper">
+          <button class="btn btn-outline user-btn" id="userAuthBtn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle>
+            </svg>
+            <span class="user-label" id="userLabel">Sign In</span>
+          </button>
+          
+          <!-- User Dropdown Menu -->
+          <div class="user-dropdown-card" id="userDropdownCard" style="display:none;">
+            <div class="user-dropdown-header">
+              <div class="avatar-circle" id="userAvatarLetter">U</div>
+              <div class="user-dropdown-info">
+                <div class="user-dropdown-name" id="userNameDisplay">User Name</div>
+                <div class="user-dropdown-email" id="userEmailDisplay">user@example.com</div>
+                <div class="user-role-badge" id="userRoleBadge">Customer</div>
+              </div>
+            </div>
+            <div class="user-dropdown-divider"></div>
+            <button class="user-dropdown-item" id="dropdownOrdersBtn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path></svg>
+              My Orders & Receipts
+            </button>
+            <button class="user-dropdown-item" id="dropdownProfileBtn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path></svg>
+              Shipping Address
+            </button>
+            <button class="user-dropdown-item" id="dropdownAdminBtn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"></path></svg>
+              Admin Dashboard
+            </button>
+            <div class="user-dropdown-divider"></div>
+            <button class="user-dropdown-item text-danger" id="dropdownLogoutBtn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
+              Sign Out
+            </button>
+          </div>
+        </div>
+
+        <!-- Cart Button -->
+        <button class="btn btn-primary cart-btn" id="openCartBtn" aria-label="Open Shopping Cart">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle>
+            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+          </svg>
+          <span class="cart-title">Cart</span>
+          <span class="cart-badge" id="cartCountBadge">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main View Container -->
+  <main class="main-wrapper" id="mainContent">
+
+    <!-- VIEW 1: PRODUCT CATALOG & STOREFRONT (Step 1) -->
+    <section class="view-section active" id="catalogView">
+      
+      <!-- Hero Section -->
+      <section class="hero-section">
+        <div class="hero-glow hero-glow-1"></div>
+        <div class="hero-glow hero-glow-2"></div>
+        <div class="container hero-container">
+          <div class="hero-text-content">
+            <div class="hero-pill">
+              <span class="pill-dot"></span> 2026 ARCHITECTURAL EDITIONS
+            </div>
+            <h1 class="hero-title">
+              Crafted Precision.<br>
+              <span class="text-gradient">Limitless Innovation.</span>
+            </h1>
+            <p class="hero-subtitle">
+              Discover audiophile acoustic engineering, minimalist titanium wearables, tactile mechanical keyboards, and bespoke lifestyle gear engineered for modern connoisseurs.
+            </p>
+            <div class="hero-actions">
+              <a href="#productCatalogSection" class="btn btn-primary btn-lg" id="exploreDropsBtn">
+                Explore The Catalog
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </a>
+              <button class="btn btn-glass btn-lg" id="quickAdminSwitchBtn">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path></svg>
+                Admin Mode Demo
+              </button>
+            </div>
+            <!-- Trust Highlights -->
+            <div class="hero-trust-bar">
+              <div class="trust-item">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                <span>Authentic 2-Year Warranty</span>
+              </div>
+              <div class="trust-item">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+                <span>Free Express Shipping $99+</span>
+              </div>
+              <div class="trust-item">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 4 23 10 17 10"></polyline><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path></svg>
+                <span>30-Day Hassle-Free Returns</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="hero-visual">
+            <div class="hero-card-showcase">
+              <div class="hero-image-wrap">
+                <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=800&auto=format&fit=crop&q=80" alt="Featured Aura Studio Headphones" class="hero-img">
+              </div>
+              <div class="hero-card-glass-badge">
+                <div class="glass-badge-icon">★ 4.9</div>
+                <div>
+                  <div class="glass-badge-title">Aura ANC Studio</div>
+                  <div class="glass-badge-subtitle">Lossless 40h Playback</div>
+                </div>
+                <div class="glass-badge-price">$299.99</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Category Filter Pills Bar -->
+      <section class="category-pills-section">
+        <div class="container">
+          <div class="category-pills-scroller" id="categoryPillsContainer">
+            <!-- Dynamic Category Pills Rendered via JS -->
+            <button class="cat-pill active" data-category="">
+              <span class="cat-pill-icon">✨</span>
+              <span>All Products</span>
+              <span class="cat-pill-count" id="pillTotalCount">12</span>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Main Catalog Layout: Sidebar + Product Grid -->
+      <section class="catalog-section" id="productCatalogSection">
+        <div class="container catalog-container">
+          
+          <!-- Left Filter Sidebar -->
+          <aside class="catalog-sidebar" id="catalogSidebar">
+            <div class="sidebar-header">
+              <h3 class="sidebar-title">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" y1="21" x2="4" y2="14"></line><line x1="4" y1="10" x2="4" y2="3"></line><line x1="12" y1="21" x2="12" y2="12"></line><line x1="12" y1="8" x2="12" y2="3"></line><line x1="20" y1="21" x2="20" y2="16"></line><line x1="20" y1="12" x2="20" y2="3"></line><line x1="1" y1="14" x2="7" y2="14"></line><line x1="9" y1="8" x2="15" y2="8"></line><line x1="17" y1="16" x2="23" y2="16"></line></svg>
+                Filter Catalog
+              </h3>
+              <button class="sidebar-reset-btn" id="resetFiltersBtn">Reset</button>
+            </div>
+
+            <!-- Categories Accordion -->
+            <div class="filter-group">
+              <h4 class="filter-group-title">Collections</h4>
+              <div class="category-radio-list" id="categoryFilterList">
+                <!-- Dynamically populated -->
+              </div>
+            </div>
+
+            <!-- Price Range Filter -->
+            <div class="filter-group">
+              <div class="filter-group-header">
+                <h4 class="filter-group-title">Max Price</h4>
+                <span class="price-val-display" id="priceDisplay">$1,000</span>
+              </div>
+              <input type="range" class="price-range-slider" id="priceRangeInput" min="20" max="1000" step="10" value="1000">
+              <div class="price-labels">
+                <span>$20</span>
+                <span>$500</span>
+                <span>$1,000</span>
+              </div>
+            </div>
+
+            <!-- Stock Status Filter -->
+            <div class="filter-group">
+              <label class="checkbox-label">
+                <input type="checkbox" id="inStockOnlyCheckbox">
+                <span class="custom-checkbox"></span>
+                <span>In Stock Only</span>
+              </label>
+            </div>
+
+            <!-- Ratings Filter -->
+            <div class="filter-group">
+              <h4 class="filter-group-title">Customer Ratings</h4>
+              <div class="rating-filter-options">
+                <label class="radio-label">
+                  <input type="radio" name="ratingFilter" value="0" checked>
+                  <span class="custom-radio"></span>
+                  <span>All Ratings</span>
+                </label>
+                <label class="radio-label">
+                  <input type="radio" name="ratingFilter" value="4.8">
+                  <span class="custom-radio"></span>
+                  <span>4.8 ★ & above</span>
+                </label>
+                <label class="radio-label">
+                  <input type="radio" name="ratingFilter" value="4.5">
+                  <span class="custom-radio"></span>
+                  <span>4.5 ★ & above</span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Promo Callout Banner in Sidebar -->
+            <div class="sidebar-promo-card">
+              <div class="promo-badge">PROMO CODE</div>
+              <div class="promo-title">25% OFF YOUR DROP</div>
+              <p class="promo-desc">Apply coupon code at checkout for 25% off purchases over $150.</p>
+              <div class="promo-copy-wrap" onclick="navigator.clipboard.writeText('LUXE25'); showToast('Coupon code LUXE25 copied!')">
+                <code>LUXE25</code>
+                <span class="copy-hint">Click to copy</span>
+              </div>
+            </div>
+          </aside>
+
+          <!-- Right Products Listing Area -->
+          <div class="catalog-main">
+            <!-- Catalog Header Controls -->
+            <div class="catalog-controls-bar">
+              <div class="catalog-result-count" id="catalogResultCount">
+                Showing <strong id="currentShownCount">0</strong> products
+              </div>
+              
+              <div class="catalog-toolbar-right">
+                <!-- Sort Select -->
+                <div class="sort-select-wrapper">
+                  <label for="catalogSortSelect" class="sort-label">Sort by:</label>
+                  <select id="catalogSortSelect" class="sort-select">
+                    <option value="featured">Featured Curations</option>
+                    <option value="price_asc">Price: Low to High</option>
+                    <option value="price_desc">Price: High to Low</option>
+                    <option value="rating">Highest Rated</option>
+                    <option value="newest">Newest Additions</option>
+                  </select>
+                </div>
+
+                <!-- View Mode Buttons -->
+                <div class="view-mode-toggle">
+                  <button class="view-btn active" id="viewGridBtn" aria-label="Grid View" title="Grid View">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+                  </button>
+                  <button class="view-btn" id="viewListBtn" aria-label="List View" title="List View">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Active Filter Badges -->
+            <div class="active-filter-tags" id="activeFilterTags" style="display:none;"></div>
+
+            <!-- Product Grid Container -->
+            <div class="product-grid" id="productGrid">
+              <!-- Dynamically populated via JS -->
+              <div class="loading-state">
+                <div class="spinner"></div>
+                <p>Loading curated catalogue...</p>
+              </div>
+            </div>
+
+            <!-- Empty State -->
+            <div class="empty-state" id="catalogEmptyState" style="display:none;">
+              <div class="empty-state-icon">🔍</div>
+              <h3>No matching products found</h3>
+              <p>Try adjusting your search query, price range, or category filters.</p>
+              <button class="btn btn-outline" id="emptyResetBtn">Reset All Filters</button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <!-- VIEW 2: PRODUCT MANAGEMENT & ADMIN DASHBOARD (Step 2) -->
+    <section class="view-section" id="adminView" style="display:none;">
+      <div class="container admin-container">
+        
+        <!-- Admin Header -->
+        <div class="admin-header-row">
+          <div>
+            <div class="admin-chip">SYSTEM CONSOLE</div>
+            <h2 class="admin-title">Product & Order Management Portal</h2>
+            <p class="admin-subtitle">Live real-time inventory control, price adjustments, order processing, and telemetry.</p>
+          </div>
+          <div class="admin-header-actions">
+            <button class="btn btn-primary" id="openAddProductModalBtn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+              Add New Product
+            </button>
+            <button class="btn btn-outline" id="refreshAdminBtn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 4 23 10 17 10"></polyline><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path></svg>
+              Refresh
+            </button>
+          </div>
+        </div>
+
+        <!-- Admin Metrics KPI Cards -->
+        <div class="admin-kpi-grid">
+          <div class="kpi-card">
+            <div class="kpi-icon kpi-revenue">💰</div>
+            <div class="kpi-details">
+              <div class="kpi-label">Gross Revenue</div>
+              <div class="kpi-value" id="kpiRevenue">$0.00</div>
+              <div class="kpi-subtext text-success">Live order settlement</div>
+            </div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-icon kpi-orders">📦</div>
+            <div class="kpi-details">
+              <div class="kpi-label">Total Orders Placed</div>
+              <div class="kpi-value" id="kpiOrders">0</div>
+              <div class="kpi-subtext">Across all customers</div>
+            </div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-icon kpi-products">💎</div>
+            <div class="kpi-details">
+              <div class="kpi-label">Active Catalog Items</div>
+              <div class="kpi-value" id="kpiProducts">0</div>
+              <div class="kpi-subtext">Active store items</div>
+            </div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-icon kpi-alerts">⚠️</div>
+            <div class="kpi-details">
+              <div class="kpi-label">Low Stock Alerts</div>
+              <div class="kpi-value text-amber" id="kpiLowStock">0</div>
+              <div class="kpi-subtext">Items with ≤ 5 units</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Admin Tabs: Products vs Orders -->
+        <div class="admin-tab-nav">
+          <button class="admin-tab-btn active" data-tab="products" id="adminTabProducts">
+            Product Catalog Inventory
+          </button>
+          <button class="admin-tab-btn" data-tab="orders" id="adminTabOrders">
+            Customer Orders & Fulfillment
+          </button>
+        </div>
+
+        <!-- Tab 1: Products Management Table -->
+        <div class="admin-tab-pane active" id="adminProductsPane">
+          <div class="admin-table-controls">
+            <div class="admin-search-wrapper">
+              <input type="text" id="adminProductSearch" class="search-input" placeholder="Search product by title or ID...">
+            </div>
+            <div class="admin-filter-category">
+              <select id="adminCategoryFilter" class="sort-select">
+                <option value="">All Categories</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="table-responsive">
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th>Product</th>
+                  <th>Category</th>
+                  <th>Price</th>
+                  <th>Stock Inventory</th>
+                  <th>Rating</th>
+                  <th>Featured</th>
+                  <th class="text-right">Actions</th>
+                </tr>
+              </thead>
+              <tbody id="adminProductsTableBody">
+                <!-- Dynamically populated via JS -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Tab 2: Orders Management Table -->
+        <div class="admin-tab-pane" id="adminOrdersPane" style="display:none;">
+          <div class="admin-table-controls">
+            <div class="admin-search-wrapper">
+              <input type="text" id="adminOrderSearch" class="search-input" placeholder="Search by Order # or Customer email...">
+            </div>
+            <div class="admin-filter-status">
+              <select id="adminOrderStatusFilter" class="sort-select">
+                <option value="">All Order Statuses</option>
+                <option value="Processing">Processing</option>
+                <option value="Shipped">Shipped</option>
+                <option value="Delivered">Delivered</option>
+                <option value="Cancelled">Cancelled</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="table-responsive">
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th>Order #</th>
+                  <th>Customer</th>
+                  <th>Date</th>
+                  <th>Total</th>
+                  <th>Payment</th>
+                  <th>Status</th>
+                  <th class="text-right">Update Status</th>
+                </tr>
+              </thead>
+              <tbody id="adminOrdersTableBody">
+                <!-- Dynamically populated via JS -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- VIEW 3: ORDERS & USER ACCOUNT (Step 4) -->
+    <section class="view-section" id="ordersView" style="display:none;">
+      <div class="container orders-container">
+        
+        <div class="account-header">
+          <div class="account-profile-summary">
+            <div class="avatar-large" id="accountAvatar">U</div>
+            <div>
+              <h2 class="account-name" id="accountNameTitle">My Orders & Purchases</h2>
+              <p class="account-email" id="accountEmailSub">Track shipments, download receipts, and manage account details.</p>
+            </div>
+          </div>
+          <div class="account-actions">
+            <button class="btn btn-outline" id="editProfileBtn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path></svg>
+              Edit Shipping Address
+            </button>
+            <button class="btn btn-glass" id="accountSignOutBtn">Sign Out</button>
+          </div>
+        </div>
+
+        <!-- Orders List Card -->
+        <div class="orders-list-card">
+          <div class="card-header-bar">
+            <h3>Recent Orders History</h3>
+            <span class="badge" id="orderCountBadge">0 Orders</span>
+          </div>
+
+          <div class="orders-list-items" id="ordersListItems">
+            <!-- Dynamically populated via JS -->
+          </div>
+
+          <!-- Empty Orders State -->
+          <div class="empty-state" id="ordersEmptyState" style="display:none;">
+            <div class="empty-state-icon">📦</div>
+            <h3>No orders found</h3>
+            <p>You haven't placed any orders yet. Explore our curated drop catalog!</p>
+            <button class="btn btn-primary" onclick="switchView('catalog')">Start Shopping</button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==================== MODALS & DRAWERS ==================== -->
+
+  <!-- 1. CART SLIDE-OVER DRAWER (Step 3) -->
+  <div class="drawer-backdrop" id="cartDrawerBackdrop">
+    <div class="cart-drawer" id="cartDrawer">
+      
+      <!-- Cart Drawer Header -->
+      <div class="drawer-header">
+        <div class="drawer-title-group">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+          <h3>Your Shopping Cart</h3>
+          <span class="cart-drawer-count" id="cartDrawerCount">(0)</span>
+        </div>
+        <button class="drawer-close-btn" id="closeCartDrawerBtn" aria-label="Close Cart">&times;</button>
+      </div>
+
+      <!-- Free Shipping Progress Tracker -->
+      <div class="shipping-progress-card">
+        <div class="shipping-progress-text" id="shippingProgressText">
+          Add <strong>$99.00</strong> more for Free Global Express Shipping!
+        </div>
+        <div class="progress-track">
+          <div class="progress-fill" id="shippingProgressFill" style="width: 0%;"></div>
+        </div>
+      </div>
+
+      <!-- Cart Items List Container -->
+      <div class="cart-items-container" id="cartItemsContainer">
+        <!-- Rendered dynamically -->
+        <div class="empty-cart-state" id="emptyCartState">
+          <div class="empty-cart-icon">🛒</div>
+          <h4>Your cart is empty</h4>
+          <p>Discover our precision audio gear, smart tech, and architectural accessories.</p>
+          <button class="btn btn-primary" id="emptyCartShopBtn">Explore Catalog</button>
+        </div>
+      </div>
+
+      <!-- Cart Drawer Footer -->
+      <div class="drawer-footer" id="cartDrawerFooter">
+        
+        <!-- Promo Code Input -->
+        <div class="promo-box">
+          <div class="promo-input-wrap">
+            <input type="text" id="cartCouponInput" placeholder="Enter promo code (e.g. LUXE25, SAVE10)" uppercase>
+            <button class="btn btn-sm btn-outline" id="applyCouponBtn">Apply</button>
+          </div>
+          <div class="applied-coupon-pill" id="appliedCouponPill" style="display:none;">
+            <span id="appliedCouponText">LUXE25 applied (-25%)</span>
+            <button class="remove-coupon-btn" id="removeCouponBtn">&times;</button>
+          </div>
+        </div>
+
+        <!-- Price Breakdown -->
+        <div class="cart-totals-breakdown">
+          <div class="totals-row">
+            <span>Subtotal</span>
+            <span id="cartSubtotalVal">$0.00</span>
+          </div>
+          <div class="totals-row discount-row" id="cartDiscountRow" style="display:none;">
+            <span>Discount</span>
+            <span class="text-success" id="cartDiscountVal">-$0.00</span>
+          </div>
+          <div class="totals-row">
+            <span>Estimated Shipping</span>
+            <span id="cartShippingVal">$0.00</span>
+          </div>
+          <div class="totals-row">
+            <span>Sales Tax (8%)</span>
+            <span id="cartTaxVal">$0.00</span>
+          </div>
+          <div class="totals-divider"></div>
+          <div class="totals-row grand-total-row">
+            <span>Estimated Total</span>
+            <span class="grand-total-amount" id="cartGrandTotalVal">$0.00</span>
+          </div>
+        </div>
+
+        <!-- Checkout Trigger Button -->
+        <button class="btn btn-primary btn-block btn-lg checkout-trigger-btn" id="startCheckoutBtn">
+          <span>Proceed To Checkout</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+        </button>
+        
+        <div class="cart-security-badge">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+          256-Bit Encrypted Secure Checkout
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 2. PRODUCT QUICK VIEW MODAL (Step 1) -->
+  <div class="modal-backdrop" id="quickViewModal">
+    <div class="modal-card modal-lg">
+      <button class="modal-close-btn" id="closeQuickViewBtn">&times;</button>
+      <div class="quick-view-grid">
+        <div class="quick-view-gallery">
+          <img id="qvImage" src="" alt="Product Preview" class="qv-img">
+        </div>
+        <div class="quick-view-info">
+          <div class="qv-category-badge" id="qvCategory">Audio & Sound</div>
+          <h2 class="qv-title" id="qvTitle">Product Title</h2>
+          <div class="qv-rating-bar">
+            <span class="qv-stars" id="qvRatingStars">★★★★★</span>
+            <span class="qv-rating-score" id="qvRatingScore">4.9</span>
+            <span class="qv-reviews" id="qvReviews">(128 reviews)</span>
+          </div>
+          
+          <div class="qv-price-wrap">
+            <span class="qv-price" id="qvPrice">$299.99</span>
+            <span class="qv-orig-price" id="qvOrigPrice">$349.99</span>
+            <span class="qv-save-badge" id="qvSaveBadge">Save $50</span>
+          </div>
+
+          <p class="qv-desc" id="qvDesc">Comprehensive product description...</p>
+          
+          <!-- Specs Table -->
+          <div class="qv-specs-container">
+            <h4>Technical Specifications</h4>
+            <div class="qv-specs-grid" id="qvSpecsGrid">
+              <!-- Dynamically populated -->
+            </div>
+          </div>
+
+          <!-- Stock Indicator -->
+          <div class="qv-stock-indicator" id="qvStockIndicator">
+            <span class="stock-dot"></span>
+            <span id="qvStockText">In Stock (18 units available)</span>
+          </div>
+
+          <!-- Action Controls -->
+          <div class="qv-actions">
+            <div class="quantity-stepper">
+              <button class="stepper-btn" id="qvQtyMinus">-</button>
+              <span class="stepper-val" id="qvQtyVal">1</span>
+              <button class="stepper-btn" id="qvQtyPlus">+</button>
+            </div>
+            <button class="btn btn-primary qv-add-btn" id="qvAddToCartBtn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+              Add to Cart
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. MULTI-STEP CHECKOUT MODAL (Step 4) -->
+  <div class="modal-backdrop" id="checkoutModal">
+    <div class="modal-card modal-lg checkout-modal-card">
+      <button class="modal-close-btn" id="closeCheckoutBtn">&times;</button>
+      
+      <!-- Checkout Wizard Steps Header -->
+      <div class="wizard-steps-header">
+        <div class="wizard-step active" data-step="1">
+          <div class="step-num">1</div>
+          <div class="step-label">Shipping Details</div>
+        </div>
+        <div class="step-line"></div>
+        <div class="wizard-step" data-step="2">
+          <div class="step-num">2</div>
+          <div class="step-label">Delivery Method</div>
+        </div>
+        <div class="step-line"></div>
+        <div class="wizard-step" data-step="3">
+          <div class="step-num">3</div>
+          <div class="step-label">Payment</div>
+        </div>
+        <div class="step-line"></div>
+        <div class="wizard-step" data-step="4">
+          <div class="step-num">4</div>
+          <div class="step-label">Confirmation</div>
+        </div>
+      </div>
+
+      <!-- Step 1: Shipping Address -->
+      <div class="wizard-step-pane active" id="wizardStep1">
+        <h3 class="step-pane-title">1. Shipping & Customer Details</h3>
+        <p class="step-pane-subtitle">Enter your delivery address for fast order fulfillment.</p>
+        
+        <form id="shippingDetailsForm" class="checkout-form-grid">
+          <div class="form-group full-width">
+            <label>Full Name *</label>
+            <input type="text" id="chkName" required placeholder="Sophia Vance">
+          </div>
+          <div class="form-group half-width">
+            <label>Email Address *</label>
+            <input type="email" id="chkEmail" required placeholder="sophia@example.com">
+          </div>
+          <div class="form-group half-width">
+            <label>Phone Number *</label>
+            <input type="tel" id="chkPhone" required placeholder="+1 (555) 782-9301">
+          </div>
+          <div class="form-group full-width">
+            <label>Street Address *</label>
+            <input type="text" id="chkAddress" required placeholder="742 Evergreen Terrace, Apt 4B">
+          </div>
+          <div class="form-group third-width">
+            <label>City *</label>
+            <input type="text" id="chkCity" required placeholder="Seattle">
+          </div>
+          <div class="form-group third-width">
+            <label>Postal Code *</label>
+            <input type="text" id="chkPostal" required placeholder="98101">
+          </div>
+          <div class="form-group third-width">
+            <label>Country *</label>
+            <select id="chkCountry" class="sort-select">
+              <option value="United States">United States</option>
+              <option value="Canada">Canada</option>
+              <option value="United Kingdom">United Kingdom</option>
+              <option value="Germany">Germany</option>
+              <option value="Australia">Australia</option>
+              <option value="Japan">Japan</option>
+              <option value="India">India</option>
+            </select>
+          </div>
+        </form>
+
+        <div class="wizard-actions">
+          <button class="btn btn-outline" id="chkCancelBtn">Back to Cart</button>
+          <button class="btn btn-primary" id="chkStep1NextBtn">Continue to Delivery</button>
+        </div>
+      </div>
+
+      <!-- Step 2: Shipping Method -->
+      <div class="wizard-step-pane" id="wizardStep2" style="display:none;">
+        <h3 class="step-pane-title">2. Select Delivery Speed</h3>
+        <p class="step-pane-subtitle">Choose your preferred courier service level.</p>
+
+        <div class="delivery-options-grid">
+          <label class="delivery-card active" id="deliveryStandardLabel">
+            <input type="radio" name="deliverySpeed" value="standard" checked>
+            <div class="delivery-card-content">
+              <div class="delivery-title-row">
+                <span class="delivery-name">Standard Insured Courier</span>
+                <span class="delivery-price" id="standardDeliveryPriceText">Free (Over $99) / $15.00</span>
+              </div>
+              <p class="delivery-estimate">Estimated arrival: 3–5 business days with full package tracking.</p>
+            </div>
+          </label>
+
+          <label class="delivery-card" id="deliveryExpressLabel">
+            <input type="radio" name="deliverySpeed" value="express">
+            <div class="delivery-card-content">
+              <div class="delivery-title-row">
+                <span class="delivery-name">Nexus Priority Air Express</span>
+                <span class="delivery-price">$25.00</span>
+              </div>
+              <p class="delivery-estimate">Estimated arrival: 1–2 business days via FedEx/DHL priority air freight.</p>
+            </div>
+          </label>
+        </div>
+
+        <div class="wizard-actions">
+          <button class="btn btn-outline" id="chkStep2BackBtn">Back</button>
+          <button class="btn btn-primary" id="chkStep2NextBtn">Continue to Payment</button>
+        </div>
+      </div>
+
+      <!-- Step 3: Payment Method -->
+      <div class="wizard-step-pane" id="wizardStep3" style="display:none;">
+        <h3 class="step-pane-title">3. Secure Payment</h3>
+        <p class="step-pane-subtitle">Choose your payment method. Test simulations are fully functional.</p>
+
+        <div class="payment-tabs-row">
+          <button class="payment-tab-btn active" data-pay="card" id="payTabCard">Credit / Debit Card</button>
+          <button class="payment-tab-btn" data-pay="paypal" id="payTabPaypal">PayPal / UPI</button>
+          <button class="payment-tab-btn" data-pay="cod" id="payTabCod">Cash on Delivery</button>
+        </div>
+
+        <!-- Interactive Virtual Credit Card Preview -->
+        <div class="virtual-card-wrapper" id="cardPreviewSection">
+          <div class="virtual-card">
+            <div class="vcard-top">
+              <div class="vcard-chip"></div>
+              <div class="vcard-brand">VISA</div>
+            </div>
+            <div class="vcard-number" id="vcardDisplayNumber">•••• •••• •••• 4242</div>
+            <div class="vcard-bottom">
+              <div>
+                <div class="vcard-label">CARDHOLDER</div>
+                <div class="vcard-val" id="vcardDisplayName">SOPHIA VANCE</div>
+              </div>
+              <div>
+                <div class="vcard-label">EXPIRES</div>
+                <div class="vcard-val" id="vcardDisplayExp">12/28</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card Input Form -->
+        <div class="card-inputs-grid" id="cardInputsGrid">
+          <div class="form-group full-width">
+            <label>Card Number</label>
+            <input type="text" id="chkCardNumber" placeholder="4242 4242 4242 4242" maxlength="19" value="4242 •••• •••• 4242">
+          </div>
+          <div class="form-group half-width">
+            <label>Expiration Date</label>
+            <input type="text" id="chkCardExp" placeholder="MM/YY" maxlength="5" value="12/28">
+          </div>
+          <div class="form-group half-width">
+            <label>CVV / CVC</label>
+            <input type="password" id="chkCardCvv" placeholder="•••" maxlength="4" value="888">
+          </div>
+        </div>
+
+        <!-- Order Summary Box inside checkout -->
+        <div class="checkout-summary-box">
+          <div class="summary-line">
+            <span>Order Total To Pay:</span>
+            <span class="summary-final-price" id="checkoutFinalTotal">$0.00</span>
+          </div>
+        </div>
+
+        <div class="wizard-actions">
+          <button class="btn btn-outline" id="chkStep3BackBtn">Back</button>
+          <button class="btn btn-primary btn-lg" id="submitOrderBtn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            Complete Order & Pay
+          </button>
+        </div>
+      </div>
+
+      <!-- Step 4: Order Placed Success Confirmation -->
+      <div class="wizard-step-pane" id="wizardStep4" style="display:none;">
+        <div class="order-success-card">
+          <div class="success-checkmark-circle">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          </div>
+          <h2 class="success-title">Order Placed Successfully!</h2>
+          <p class="success-subtitle">Thank you for your purchase. A confirmation and tracking receipt have been dispatched.</p>
+          
+          <div class="order-info-pill-box">
+            <div class="pill-line">
+              <span>Order Number:</span>
+              <strong class="highlight-code" id="confirmedOrderNum">NX-XXXXX</strong>
+            </div>
+            <div class="pill-line">
+              <span>Total Paid:</span>
+              <strong id="confirmedOrderTotal">$0.00</strong>
+            </div>
+            <div class="pill-line">
+              <span>Status:</span>
+              <span class="status-badge status-processing">Processing</span>
+            </div>
+          </div>
+
+          <div class="success-actions">
+            <button class="btn btn-primary" id="viewConfirmedOrderBtn">Track In My Orders</button>
+            <button class="btn btn-outline" id="continueShoppingSuccessBtn">Continue Shopping</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 4. AUTHENTICATION MODAL (Sign In / Register) -->
+  <div class="modal-backdrop" id="authModal">
+    <div class="modal-card auth-modal-card">
+      <button class="modal-close-btn" id="closeAuthBtn">&times;</button>
+      
+      <!-- Auth Tabs -->
+      <div class="auth-tabs">
+        <button class="auth-tab-btn active" id="authTabSignIn">Sign In</button>
+        <button class="auth-tab-btn" id="authTabSignUp">Create Account</button>
+      </div>
+
+      <!-- Demo One-Click Login Bar -->
+      <div class="demo-logins-box">
+        <span class="demo-login-label">Quick Testing Credentials:</span>
+        <div class="demo-buttons-row">
+          <button class="btn btn-sm btn-outline" id="quickLoginAdminBtn" title="Login as Administrator with full CRUD rights">
+            🔑 Admin Demo
+          </button>
+          <button class="btn btn-sm btn-outline" id="quickLoginCustomerBtn" title="Login as Sample Customer Sophia Vance">
+            👤 Customer Demo
+          </button>
+        </div>
+      </div>
+
+      <!-- Sign In Form -->
+      <form id="signInForm" class="auth-form active">
+        <div class="form-group">
+          <label>Email Address</label>
+          <input type="email" id="loginEmail" required placeholder="admin@nexusluxe.com">
+        </div>
+        <div class="form-group">
+          <label>Password</label>
+          <input type="password" id="loginPassword" required placeholder="••••••••">
+        </div>
+        <button type="submit" class="btn btn-primary btn-block btn-lg" id="submitLoginBtn">Sign In</button>
+      </form>
+
+      <!-- Register Form -->
+      <form id="signUpForm" class="auth-form" style="display:none;">
+        <div class="form-group">
+          <label>Full Name</label>
+          <input type="text" id="regName" required placeholder="John Doe">
+        </div>
+        <div class="form-group">
+          <label>Email Address</label>
+          <input type="email" id="regEmail" required placeholder="john@example.com">
+        </div>
+        <div class="form-group">
+          <label>Password (min 6 chars)</label>
+          <input type="password" id="regPassword" required minlength="6" placeholder="••••••••">
+        </div>
+        <button type="submit" class="btn btn-primary btn-block btn-lg" id="submitRegBtn">Create Account</button>
+      </form>
+
+    </div>
+  </div>
+
+  <!-- 5. ADMIN CREATE / EDIT PRODUCT MODAL (Step 2) -->
+  <div class="modal-backdrop" id="productModal">
+    <div class="modal-card modal-lg">
+      <button class="modal-close-btn" id="closeProductModalBtn">&times;</button>
+      <h3 class="modal-title" id="productModalTitle">Add New Product</h3>
+      <p class="modal-subtitle">Configure pricing, category categorization, imagery, and inventory.</p>
+
+      <form id="productForm" class="product-admin-form">
+        <input type="hidden" id="adminProductId">
+
+        <div class="form-group full-width">
+          <label>Product Title *</label>
+          <input type="text" id="prodTitle" required placeholder="e.g. Apex Studio Spatial Monitors">
+        </div>
+
+        <div class="form-group third-width">
+          <label>Category *</label>
+          <select id="prodCategory" class="sort-select" required></select>
+        </div>
+
+        <div class="form-group third-width">
+          <label>Price ($) *</label>
+          <input type="number" id="prodPrice" step="0.01" min="0" required placeholder="249.99">
+        </div>
+
+        <div class="form-group third-width">
+          <label>Original / Strikethrough Price ($)</label>
+          <input type="number" id="prodOrigPrice" step="0.01" min="0" placeholder="299.99">
+        </div>
+
+        <div class="form-group half-width">
+          <label>Stock Count *</label>
+          <input type="number" id="prodStock" min="0" required placeholder="20">
+        </div>
+
+        <div class="form-group half-width">
+          <label>Featured on Home</label>
+          <select id="prodFeatured" class="sort-select">
+            <option value="0">No</option>
+            <option value="1">Yes (Showcase in Featured)</option>
+          </select>
+        </div>
+
+        <div class="form-group full-width">
+          <label>Image URL (Unsplash or direct image link) *</label>
+          <input type="url" id="prodImageUrl" required placeholder="https://images.unsplash.com/photo-...">
+        </div>
+
+        <div class="form-group full-width">
+          <label>Description *</label>
+          <textarea id="prodDescription" rows="3" required placeholder="Detailed design notes, acoustic properties, materials..."></textarea>
+        </div>
+
+        <div class="form-group full-width">
+          <label>Tags (comma-separated)</label>
+          <input type="text" id="prodTags" placeholder="wireless, audiophile, titanium, rgb">
+        </div>
+
+        <div class="modal-actions full-width">
+          <button type="button" class="btn btn-outline" id="cancelProductModalBtn">Cancel</button>
+          <button type="submit" class="btn btn-primary" id="saveProductBtn">Save Product</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- 6. USER PROFILE & ADDRESS MODAL -->
+  <div class="modal-backdrop" id="profileModal">
+    <div class="modal-card">
+      <button class="modal-close-btn" id="closeProfileBtn">&times;</button>
+      <h3 class="modal-title">Saved Shipping Address</h3>
+      <p class="modal-subtitle">Update your default shipping address for faster 1-click checkout.</p>
+
+      <form id="profileForm">
+        <div class="form-group">
+          <label>Full Name</label>
+          <input type="text" id="profName" required>
+        </div>
+        <div class="form-group">
+          <label>Phone Number</label>
+          <input type="tel" id="profPhone" placeholder="+1 (555) 000-0000">
+        </div>
+        <div class="form-group">
+          <label>Street Address</label>
+          <input type="text" id="profAddress" placeholder="Street name and apartment/suite">
+        </div>
+        <div class="form-group">
+          <label>City</label>
+          <input type="text" id="profCity">
+        </div>
+        <div class="form-group">
+          <label>Postal Code</label>
+          <input type="text" id="profPostal">
+        </div>
+        <div class="form-group">
+          <label>Country</label>
+          <input type="text" id="profCountry">
+        </div>
+        <div class="modal-actions">
+          <button type="button" class="btn btn-outline" id="cancelProfileBtn">Cancel</button>
+          <button type="submit" class="btn btn-primary">Save Changes</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- 7. ORDER DETAILS & TIMELINE MODAL -->
+  <div class="modal-backdrop" id="orderDetailsModal">
+    <div class="modal-card modal-lg">
+      <button class="modal-close-btn" id="closeOrderDetailsBtn">&times;</button>
+      <div id="orderDetailsContent">
+        <!-- Rendered dynamically -->
+      </div>
+    </div>
+  </div>
+
+  <!-- FLOATING TOAST NOTIFICATION CONTAINER -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- Footer -->
+  <footer class="main-footer">
+    <div class="container footer-content">
+      <div class="footer-col brand-col">
+        <div class="brand-logo footer-logo">
+          <div class="logo-mark">⚡</div>
+          <span class="logo-text">NEXUS<span class="text-gradient">LUXE</span></span>
+        </div>
+        <p class="footer-desc">
+          Architectural electronics, audiophile sound systems, and minimalist living accessories engineered for modern connoisseurs worldwide.
+        </p>
+        <div class="footer-badges">
+          <span class="secure-chip">🛡️ SSL 256-bit Secure</span>
+          <span class="secure-chip">⚡ Fast Delivery</span>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Product Collections</h4>
+        <ul class="footer-links">
+          <li><a href="#" onclick="filterByCategorySlug('audio-sound'); return false;">Audio & Sound</a></li>
+          <li><a href="#" onclick="filterByCategorySlug('smart-electronics'); return false;">Smart Electronics</a></li>
+          <li><a href="#" onclick="filterByCategorySlug('computer-desk'); return false;">Computer & Desk</a></li>
+          <li><a href="#" onclick="filterByCategorySlug('designer-apparel'); return false;">Designer Apparel</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Customer Care</h4>
+        <ul class="footer-links">
+          <li><a href="#" onclick="switchView('orders'); return false;">Track Your Shipment</a></li>
+          <li><a href="#" onclick="openCart(); return false;">Shopping Cart</a></li>
+          <li><a href="#">Warranty & Repairs</a></li>
+          <li><a href="#">Returns Policy</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Admin & Operations</h4>
+        <ul class="footer-links">
+          <li><a href="#" onclick="switchView('admin'); return false;">Product Management Portal</a></li>
+          <li><a href="#" onclick="showQuickAdminLogin(); return false;">Administrator Login</a></li>
+          <li><a href="#" onclick="copyTestCoupon(); return false;">Copy 'LUXE25' Coupon</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container bottom-row">
+        <div>&copy; 2026 Nexus Luxe E-Commerce Platform. Built with Vanilla CSS & Modern JS.</div>
+        <div class="bottom-links">
+          <span>Privacy Policy</span> &bull; 
+          <span>Terms of Service</span> &bull; 
+          <span>Security Audit</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="/static/js/api.js"></script>
+  <script src="/static/js/state.js"></script>
+  <script src="/static/js/catalog.js"></script>
+  <script src="/static/js/cart.js"></script>
+  <script src="/static/js/checkout.js"></script>
+  <script src="/static/js/auth.js"></script>
+  <script src="/static/js/admin.js"></script>
+  <script src="/static/js/app.js"></script>
+</body>
+</html>
