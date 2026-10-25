@@ -6,7 +6,10 @@ import os
 import json
 from werkzeug.security import generate_password_hash
 
-DB_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "ecommerce.db")
+DB_PATH = os.environ.get(
+    "DATABASE_PATH",
+    os.path.join(os.path.dirname(os.path.abspath(__file__)), "ecommerce.db"),
+)
 
 def get_db_connection():
     conn = sqlite3.connect(DB_PATH)

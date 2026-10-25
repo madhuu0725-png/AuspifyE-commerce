@@ -52,8 +52,9 @@ A state-of-the-art full-stack e-commerce platform for curated next-generation te
 ## 🚀 Running the Application
 
 ### 1. Start the Server
-The application runs on port `5050` (or your configured port):
+Install the project dependencies and start the app locally:
 ```bash
+python -m pip install -r requirements.txt
 python app.py
 ```
 Open your browser and navigate to:
@@ -61,7 +62,26 @@ Open your browser and navigate to:
 http://127.0.0.1:5050
 ```
 
-### 2. Run the End-to-End Test Suite
+### 2. Deploy to Render
+
+Create a new Blueprint in Render from this GitHub repository and Render will
+use the included `render.yaml` to build and start the web service. The
+`Procfile` provides the same start command for other compatible Python hosts:
+
+```bash
+gunicorn --bind 0.0.0.0:$PORT app:app
+```
+
+Do not enter `web: ...` in PowerShell; `web:` is the process-type syntax used
+inside the `Procfile`.
+
+Render generates a unique `SECRET_KEY` for the service. The free service uses
+ephemeral storage, so its SQLite database can reset on restart or redeploy.
+For persistent production data, use a paid Render plan with a persistent disk
+and set `DATABASE_PATH` to a database file on that disk (for example,
+`/var/data/ecommerce.db`).
+
+### 3. Run the End-to-End Test Suite
 ```bash
 python test_e2e.py
 ```
