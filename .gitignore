@@ -1,6 +1,7 @@
 __pycache__/
 *.py[cod]
-ecommerce.db
+*.pyc
+*.db
 ecommerce.db-*
 .venv/
 venv/
